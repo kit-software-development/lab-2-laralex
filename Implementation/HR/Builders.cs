@@ -19,7 +19,7 @@ namespace Practice.HR
             /*
              * TODO #6: Реализовать фабричный метод ClientBuilder класса Builders
              */
-            throw new NotImplementedException();
+            return new ClientBuilder();
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Practice.HR
             /*
              * TODO #7: Реализовать фабричный метод EmployeeBuilder класса Builders
              */
-            throw new NotImplementedException();
+            return new EmployeeBuilder();
         }
 
     }
