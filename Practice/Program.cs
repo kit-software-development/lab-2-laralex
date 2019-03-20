@@ -14,13 +14,14 @@ namespace Practice
     {
         static void Main(string[] args)
         {
+            // [Изменение исходников]: Порядок передачи аргументов должен быть (Имя, Фамилия, Отчество), как в интерфейсе
             IClient client = Builders.ClientBuilder()
-                .Name("Иванов", "Иван", "Иванович") 
+                .Name("Иван", "Иванов", "Иванович") 
                 .Discount(.1f)
                 .Build();
 
             IEmployee employee = Builders.EmployeeBuilder()
-                .Name("Сидоров", "Григорий", "Петрович")
+                .Name("Григорий", "Сидоров", "Петрович")
                 .Department("Бухгалтерия")
                 .Build();
 
@@ -30,6 +31,27 @@ namespace Practice
 
             /*
              * TODO #9: При помощи отладчика проверить типы и структуру объектов, адресованных переменными client и employee.
+             */
+
+            /* Структура объектов
+             client {Type = Practice.HR.Client}:
+                    Discount = 0.1,
+                    Name {Type = Practice.Common.Name}:
+                        Surname = "Иванов"
+                        FirstName = "Иван"
+                        Patronymic = "Иванович"
+                        FullName = "Иванов Иван Иванович"
+                        ShortName = "И.И.Иванов"
+
+             employee {Type = Practice.HR.Employee}:
+                    Department {Type = Practice.Organization.Department}:
+                        Name = "Бухгалтерия"
+                    Name {Type = Practice.Common.Name}:
+                        Surname = "Сидоров"
+                        FirstName = "Григорий"
+                        Patronymic = "Петрович"
+                        FullName = "Сидоров Григорий Петрович"
+                        ShortName = "Г.П.Сидоров" 
              */
         }
     }

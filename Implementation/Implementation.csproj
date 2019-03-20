@@ -44,7 +44,9 @@
     <Compile Include="HR\AbstractPerson.cs" />
     <Compile Include="HR\Builders.cs" />
     <Compile Include="HR\Client.cs" />
+    <Compile Include="HR\ClientBuilder.cs" />
     <Compile Include="HR\Employee.cs" />
+    <Compile Include="HR\EmployeeBuilder.cs" />
     <Compile Include="Organization\Department.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
